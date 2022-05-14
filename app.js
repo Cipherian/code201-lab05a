@@ -11,6 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) {
   //eslint-disable-line
   return [a + b, `The sum of ${a} and ${b} is ${a + b}.`];
+  //This one was already fixed when I downloaded it, just adding a comment to verify that I looked at it.
 }
 
 // Here is the test for sum(); uncomment it to run it
