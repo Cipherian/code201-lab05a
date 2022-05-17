@@ -30,7 +30,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 
 function multiply(a, b) {
-  return [a * b, "The product of 5 and 9 is 45."];
+  return [a * b, `The product of ${a} and ${b} is ${a * b}.`];
   //eslint-disable-line
 }
 
@@ -56,16 +56,16 @@ function sumAndMultiply(a, b, c) {
   let mySum = sum(m, c)[0];
   let z = multiply(a, b)[0];
   let myMult = multiply(z, c)[0];
-  
+
   return [
     mySum,
     myMult,
-    `${a} and ${b} and ${c} sum to ${sum(a,b, mySum)}.`, 
-    `The product of ${a} and ${b} and ${c} is ${multiply(a,b,myMult)}.`,
+    `${a} and ${b} and ${c} sum to ${sum(a, b, mySum)}.`,
+    `The product of ${a} and ${b} and ${c} is ${multiply(a, b, myMult)}.`,
   ];
   //eslint-disable-line
 }
-console.log(sumAndMultiply(4,7,5))
+console.log(sumAndMultiply(4, 7, 5));
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4, 7, 5);
@@ -89,21 +89,43 @@ However, you may continue to use the + operator for string concatenation.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
-
+// let testArray = [2, 3, 4]; //eslint-disable-line
+// function myArray(sumArr) {
+//   for (let i = 0; i < testArray.length; i++) {
+//  sumArr = 0;
+//   sumArr += testArray[i];
+// }
+// }
+console.log(myArray())
 function sumArray(sumArr) {
-   sumArr = 0;
-  for (let i = 0; i < testArray.length; i++) {
-    sumArr += testArray[i];
-  //eslint-disable-line
-}
-return [
-  sumArr,
-  "2,3,4 was passed in as an array of numbers, and 9 is their sum."
-]
+  // a + b + c
+  // sum(a, sum(b, c))
+  // sum(a, sum(b, c)[0])[0]
+  // sum(sumArr[0], sum(sumArr[1], sumArr[2])[0])[0];
 
+  let a = sumArr[0];
+  let b = sumArr[1];
+  let c = sumArr[2];
+  console.log("a, b, c", a, b, c);
+
+  let bc = sum(b, c)[0];
+  console.log("bc", bc);
+
+  let abc = sum(a, bc)[0];
+  console.log("abc", abc);
+
+  return [abc, `${2},${3},${4} was passed in as an array of numbers, and 9 is their sum.`];
 }
-console.log(sumArray())
+// Here is the test for sumArray(); uncomment it to run it
+
+testSumArray(testArray);
+//eslint-disable-line
+// return [
+//   sumArr,
+//   "2,3,4 was passed in as an array of numbers, and 9 is their sum."
+// ]
+
+console.log(sumArray(0));
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -124,20 +146,20 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   let testArray = [2, 3, 4]; //eslint-disable-line
-   multArr = 0;
+  multArr = 1;
   for (let i = 0; i < testArray.length; i++) {
-    multArr += testArray[i];
-  //eslint-disable-line
-}
-return [
-  multArr,
-  "2,3,4 was passed in as an array of numbers, and 9 is their sum."
-]
+    multArr *= testArray[i];
+    //eslint-disable-line
+  }
+  return [
+    multArr,
+    "2,3,4 was passed in as an array of numbers, and 9 is their sum.",
+  ];
   //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
