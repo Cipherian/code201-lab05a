@@ -30,7 +30,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 
 function multiply(a, b) {
-  return [a * b, "The product of 5 and 9 is 45."];
+  return [a * b, `The product of ${a} and ${b} is ${a * b}.`];
   //eslint-disable-line
 }
 
@@ -56,16 +56,14 @@ function sumAndMultiply(a, b, c) {
   let mySum = sum(m, c)[0];
   let z = multiply(a, b)[0];
   let myMult = multiply(z, c)[0];
-  
+
   return [
-    mySum,
-    myMult,
     `${a} and ${b} and ${c} sum to ${a,b, mySum}.`,
     `The product of ${a} and ${b} and ${c} is ${myMult}.`,
   ];
   //eslint-disable-line
 }
-console.log(sumAndMultiply(4,7,5))
+console.log(sumAndMultiply(4, 7, 5));
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4, 7, 5);
@@ -89,13 +87,17 @@ However, you may continue to use the + operator for string concatenation.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
+
 let testArray = [2, 3, 4]; //eslint-disable-line
+
+
 // function myArray(sumArr) {
 //   for (let i = 0; i < testArray.length; i++) {
 //  sumArr = 0;
 //   sumArr += testArray[i];
 // }
 // }
+
 function sumArray(sumArr) {
 
   let a = sumArr[0];
@@ -144,6 +146,7 @@ Test this function by hand in the console to get it working, and when you think 
 // }
 // Write your code here
 function multiplyArray(multArr) {
+
   //eslint-disable-line
 
     let a = multArr[0];
